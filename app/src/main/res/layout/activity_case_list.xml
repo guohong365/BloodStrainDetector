@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CaseListActivity">
+    <include layout="@layout/layout_tool_bar"/>
+    <SearchView
+        android:id="@+id/ctrl_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+    </SearchView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ctrl_case_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/BottomActionBar"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/action_add_case"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_add"
+            android:text="@string/label_action_add" />
+    </LinearLayout>
+
+</LinearLayout>

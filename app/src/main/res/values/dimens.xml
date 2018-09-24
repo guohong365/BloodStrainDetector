@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fontSizeSmall">10sp</dimen>
+     <dimen name="margin_main_menu_button_frame">8dp</dimen>
+    <dimen name="padding_main_menu_button_item">8dp</dimen>
+    <dimen name="height_start_logo">96dp</dimen>
+    <dimen name="action_image_size">48dp</dimen>
+    <dimen name="app_title_margin">32dp</dimen>
+
+    <dimen name="ctrl_case_level_size">24dp</dimen>
+    <dimen name="ctrl_separator">4dp</dimen>
+
+    <!-- RecyclerView IMAGE item -->
+    <dimen name="size_image_checkbox">36dp</dimen>
+    <dimen name="margin_image_checkbox">4dp</dimen>
+    <dimen name="padding_image_grid_view">8dp</dimen>
+    <dimen name="thick_image_item_grid_decoration">1dp</dimen>
+
+    <!-- RecyclerView CASE item -->
+    <dimen name="preview_size">48dp</dimen>
+    <dimen name="padding_case_list">2dp</dimen>
+    <dimen name="margin_case_preview">8dp</dimen>
+    <dimen name="height_decoration_case_list">1dp</dimen>
+
+    <dimen name="size_group_select_all_checkbox">24dp</dimen>
+</resources>

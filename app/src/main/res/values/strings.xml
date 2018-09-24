@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">BloodStrainDetector</string>
+    <string name="app_title" translatable="false">TiXing</string>
+    <string name="company_name" translatable="false">北京厚德天赢科技有限公司</string>
+    <string name="copyright">Copyright©（2017）</string>
+    <string name="dummy_content" translatable="false">DUMMY</string>
+
+    <string name="err_init_app">initialize app on startup failed.</string>
+    <string name="err_insert_case">save new case failed.</string>
+    <string name="err_update_case">update case failed.</string>
+    <string name="err_delete_case">delete case failed.</string>
+    <string name="err_save_image_file_failed">save image file failed.</string>
+
+    <string name="action_name_case_view">Case</string>
+    <string name="action_name_search">Search</string>
+    <string name="action_name_settings">Settings</string>
+    <string name="action_name_gallery">Gallery</string>
+    <string name="action_name_edit">Edit</string>
+    <string name="action_name_delete">Delete</string>
+    <string name="label_action_batch_delete">Batch Del</string>
+    <string name="action_name_yes">Yes</string>
+    <string name="action_name_cancel">Cancel</string>
+    <string name="label_menu_save_as">Save As</string>
+
+    <string name="system_dialog_title_warning">System warning</string>
+    <string name="message_if_delete_case">are you sure to DELETE this case and ALL photos under that case? </string>
+    <string name="message_if_delete_image">are you sure to DELETE this photo? </string>
+    <string name="message_choose_for_compare">Choose TWO photos for compare.</string>
+    <string name="message_choose_for_delete">Choose photos to delete.</string>
+    <string name="message_choose_for_export">Choose photos to export.</string>
+    <string name="message_choose_and_replace_for_compare">Choose ONE photo to replace current image.</string>
+
+    <string name="fmt_date" translatable="false">yyyy-MM-dd</string>
+    <string name="hint_operator">Operator</string>
+    <string name="hint_case_name">Case Name</string>
+    <string name="hint_comment">Description</string>
+    <string name="label_level">Level:</string>
+    <string name="label_create_date">Create Date:</string>
+    <string name="label_location">Location:</string>
+    <string name="label_longitude">Longitude:</string>
+    <string name="label_latitude">Latitude:</string>
+    <string name="fmt_case_name">%s (%d Photos)</string>
+    <string name="label_select_all">All</string>
+    <string name="action_name_export">Export</string>
+    <string name="err_field_empty">Field can not be empty</string>
+    <string name="err_duplicated_case_title">Duplicated case title.</string>
+
+    <string name="title_activity_image_pager" translatable="false">ImagePagerActivity</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="title_case_content">Case Images</string>
+    <string name="title_case_list">Case List</string>
+    <string name="label_action_done">Done</string>
+    <string name="label_action_cancel">Cancel</string>
+    <string name="label_action_add">Add</string>
+    <string name="label_action_delete">Delete</string>
+    <string name="label_action_edit">Edit</string>
+    <string name="label_alpha">Transparent</string>
+    <string name="label_action_compare_split">左右比对</string>
+    <string name="label_action_compare_overlap">重叠比对</string>
+    <string name="label_action_take">拍照</string>
+    <string name="label_action_choose">选取</string>
+    <string name="label_action_swap_left">移左</string>
+    <string name="label_action_swap_right">移右</string>
+    <string name="label_action_swap_up_down">互换</string>
+    <string name="label_menu_swap_left_right">Swap L/R</string>
+    <string name="label_menu_swap_up_down">Swap U/D</string>
+</resources>

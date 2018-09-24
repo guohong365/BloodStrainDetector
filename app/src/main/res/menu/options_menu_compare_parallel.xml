@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/option_menu_save"
+        android:icon="@drawable/ic_save"
+        android:title="@string/label_menu_save"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/option_menu_swap"
+        android:icon="@drawable/ic_swap_left_right_normal"
+        android:title="@string/label_menu_swap_left_right"
+        app:showAsAction="ifRoom" />
+</menu>

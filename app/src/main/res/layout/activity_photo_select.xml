@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PhotoSelectActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/t_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:layout_toStartOf="@+id/ctrl_select_all" />
+
+        <CheckBox
+            android:id="@+id/ctrl_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:text="@string/label_select_all" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ctrl_photo_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/BottomActionBar">
+
+        <TextView
+            android:id="@+id/action_done"
+            style="@style/BottomActionBarItem.Action"
+            android:text="@string/label_action_done"
+            android:drawableTop="@drawable/ic_action_done" />
+
+        <TextView
+            android:id="@+id/action_cancel"
+            style="@style/BottomActionBarItem.Action"
+            android:text="@string/label_action_done"
+            android:drawableTop="@drawable/ic_action_cancel" />
+    </LinearLayout>
+</LinearLayout>

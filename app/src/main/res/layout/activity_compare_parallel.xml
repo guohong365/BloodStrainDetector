@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/compare_activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".CompareParallelActivity">
+
+    <include layout="@layout/layout_tool_bar" />
+
+    <com.uc.bloodstraindetector.view.CompareFrameLayout
+
+        android:id="@+id/compare_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_bar"
+        android:layout_above="@+id/compare_item_options">
+
+    </com.uc.bloodstraindetector.view.CompareFrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/compare_item_options"
+        style="@style/BottomActionBar"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/divider"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/action_take_1"
+                style="@style/BottomActionBarItem"
+                android:drawableTop="@drawable/ic_action_take_photo"
+                android:text="@string/label_action_take" />
+
+            <TextView
+                android:id="@+id/action_choose_1"
+                style="@style/BottomActionBarItem"
+                android:drawableTop="@drawable/ic_action_gallery"
+                android:text="@string/label_action_choose" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/action_swap_to_right"
+            style="@style/BottomActionBarItem"
+            android:layout_toStartOf="@+id/divider"
+            android:drawableTop="@drawable/ic_swap_left_right_normal"
+            android:text="@string/label_action_swap_right" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/BottomActionBarHeight"
+            android:layout_centerInParent="true"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/divider"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/action_take_2"
+                style="@style/BottomActionBarItem"
+                android:drawableTop="@drawable/ic_action_take_photo"
+                android:text="@string/label_action_take" />
+
+            <TextView
+                android:id="@+id/action_choose_2"
+                style="@style/BottomActionBarItem"
+                android:drawableTop="@drawable/ic_action_gallery"
+                android:text="@string/label_action_choose" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/action_swap_to_left"
+            style="@style/BottomActionBarItem"
+            android:layout_toEndOf="@+id/divider"
+            android:drawableTop="@drawable/ic_swap_left_right_normal"
+            android:text="@string/label_action_swap_left" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/blocking_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_bar" />
+</RelativeLayout>

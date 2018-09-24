@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pager_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:orientation="vertical"
+    tools:context=".ImagePagerActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <TextView
+        android:id="@+id/t_case_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/BottomActionBarItemMargin"
+        android:text="@string/dummy_content"
+        android:textColor="?attr/colorButtonNormal"
+        android:visibility="gone" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ctrl_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/ctrl_command_bar"
+        style="@style/BottomActionBar"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/action_edit"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_edit"
+            android:text="@string/label_action_edit" />
+
+        <TextView
+            android:id="@+id/action_delete"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_delete"
+            android:text="@string/label_action_delete" />
+    </LinearLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+</LinearLayout>

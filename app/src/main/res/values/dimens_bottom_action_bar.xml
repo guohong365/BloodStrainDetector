@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="BottomActionBarHeight">48dp</dimen>
+    <dimen name="BottomActionBarItemMargin">8dp</dimen>
+    <dimen name="BottomActionBarPadding">2dp</dimen>
+    <dimen name="BottomActionBarLabelSize">@dimen/fontSizeSmall</dimen>
+</resources>

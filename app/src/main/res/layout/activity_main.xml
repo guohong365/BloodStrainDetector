@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/app_title_margin"
+        android:text="@string/app_title"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="64dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/action_case_view"
+            style="@style/MainMenuButtonFrame">
+
+            <TextView
+                style="@style/MainMenuButtonItem"
+                android:text="@string/action_name_case_view"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/action_gallery"
+            style="@style/MainMenuButtonFrame">
+
+            <TextView
+                style="@style/MainMenuButtonItem"
+                android:text="@string/action_name_gallery" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/action_settings"
+            style="@style/MainMenuButtonFrame">
+
+            <TextView
+                style="@style/MainMenuButtonItem"
+                android:text="@string/action_name_settings" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_copyright"
+        android:layout_centerHorizontal="true"
+        android:text="@string/company_name"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txt_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="@string/copyright"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

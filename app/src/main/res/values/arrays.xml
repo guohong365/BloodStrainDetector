@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="case_level_hint_drawable">
+        <item>@drawable/ic_case_level_0_normal</item>
+        <item>@drawable/ic_case_level_1_normal</item>
+        <item>@drawable/ic_case_level_2_normal</item>
+        <item>@drawable/ic_case_level_3_normal</item>
+        <item>@drawable/ic_case_level_4_normal</item>
+    </array>
+</resources>

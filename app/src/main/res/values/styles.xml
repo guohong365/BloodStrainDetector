@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullScreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="FullScreenThem" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullScreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+
+
+    <style name="BottomActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:paddingTop">@dimen/BottomActionBarPadding</item>
+        <item name="android:paddingBottom">@dimen/BottomActionBarPadding</item>
+    </style>
+
+    <style name="BottomActionBarItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/BottomActionBarLabelSize</item>
+        <item name="android:layout_marginStart">@dimen/BottomActionBarItemMargin</item>
+        <item name="android:layout_marginEnd">@dimen/BottomActionBarItemMargin</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="BottomActionBarItem.Action" parent="BottomActionBarItem">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="MainMenuButtonFrame">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_margin">@dimen/margin_main_menu_button_frame</item>
+    </style>
+    <style name="MainMenuButtonItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/padding_main_menu_button_item</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

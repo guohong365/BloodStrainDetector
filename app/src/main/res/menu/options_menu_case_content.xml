@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/option_menu_export" android:title="label_menu_export" android:icon="@drawable/ic_action_export" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/option_menu_batch_delete" android:title="@string/label_action_batch_delete" android:icon="@drawable/ic_action_batch_delete" app:showAsAction="ifRoom"/>
+
+</menu>

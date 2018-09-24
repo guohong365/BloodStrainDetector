@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CaseContentActivity">
+    <include layout="@layout/layout_tool_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/t_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:text="@string/dummy_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/t_operator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:text="@string/dummy_content" />
+
+        <TextView
+            android:id="@+id/t_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/t_name"
+            android:layout_marginStart="@dimen/ctrl_case_level_size"
+            android:text="@string/dummy_content" />
+    </RelativeLayout>
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ctrl_photo_group_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/BottomActionBar">
+
+        <TextView
+            android:id="@+id/action_take_photo"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_take_photo"
+            android:text="@string/label_action_take"/>
+
+        <TextView
+            android:id="@+id/action_compare_split"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_compare_split"
+            android:text="@string/label_action_compare_split"/>
+
+        <TextView
+            android:id="@+id/action_compare_overlap"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_compare_overlap"
+            android:text="@string/label_action_compare_overlap" />
+
+        <TextView
+            android:id="@+id/action_delete"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_batch_delete"
+            android:text="@string/label_action_batch_delete"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/action_export"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_export"
+            android:text="@string/action_name_export"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

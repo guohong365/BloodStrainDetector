@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CaseEditorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_operator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:ems="10"
+            android:hint="@string/hint_operator"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="20"
+            android:textAlignment="viewStart" />
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:ems="10"
+            android:hint="@string/hint_case_name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textAlignment="viewStart" />
+
+        <EditText
+            android:id="@+id/edt_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/hint_comment"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLength="200" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:text="@string/label_level" />
+
+            <ImageView
+                android:id="@+id/ctrl_case_level_0"
+                android:layout_width="@dimen/ctrl_case_level_size"
+                android:layout_height="@dimen/ctrl_case_level_size"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:contentDescription="@string/dummy_content"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_case_level_0" />
+
+            <ImageView
+                android:id="@+id/ctrl_case_level_1"
+                android:layout_width="@dimen/ctrl_case_level_size"
+                android:layout_height="@dimen/ctrl_case_level_size"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:contentDescription="@string/dummy_content"
+                app:srcCompat="@drawable/ic_case_level_1" />
+
+            <ImageView
+                android:id="@+id/ctrl_case_level_2"
+                android:layout_width="@dimen/ctrl_case_level_size"
+                android:layout_height="@dimen/ctrl_case_level_size"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:contentDescription="@string/dummy_content"
+                app:srcCompat="@drawable/ic_case_level_2" />
+
+            <ImageView
+                android:id="@+id/ctrl_case_level_3"
+                android:layout_width="@dimen/ctrl_case_level_size"
+                android:layout_height="@dimen/ctrl_case_level_size"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:contentDescription="@string/dummy_content"
+                app:srcCompat="@drawable/ic_case_level_3" />
+
+            <ImageView
+                android:id="@+id/ctrl_case_level_4"
+                android:layout_width="@dimen/ctrl_case_level_size"
+                android:layout_height="@dimen/ctrl_case_level_size"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:contentDescription="@string/dummy_content"
+                app:srcCompat="@drawable/ic_case_level_4" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:text="@string/label_create_date" />
+
+            <TextView
+                android:id="@+id/t_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:layout_marginStart="@dimen/ctrl_separator"
+                android:textAlignment="viewStart" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/BottomActionBarItemMargin">
+
+            <TextView
+                android:id="@+id/label_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/ctrl_separator"
+                android:text="@string/label_location" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/label_location"
+                android:layout_toStartOf="@+id/ctrl_location">
+
+                <TextView
+                    android:id="@+id/label_longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/ctrl_separator"
+                    android:layout_marginEnd="@dimen/ctrl_separator"
+                    android:layout_marginStart="@dimen/ctrl_separator"
+                    android:text="@string/label_longitude"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/label_latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/label_longitude"
+                    android:layout_alignStart="@+id/label_longitude"
+                    android:layout_below="@+id/label_longitude"
+                    android:text="@string/label_latitude"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/t_longitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@+id/label_longitude"
+                    android:layout_alignTop="@+id/label_longitude"
+                    android:layout_marginEnd="@dimen/ctrl_separator"
+                    android:layout_toEndOf="@+id/label_longitude"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/t_latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/label_latitude"
+                    android:layout_alignTop="@+id/label_latitude"
+                    android:layout_marginEnd="@dimen/ctrl_separator"
+                    android:layout_marginStart="@dimen/ctrl_separator"
+                    android:layout_toEndOf="@+id/label_latitude"
+                    android:textAlignment="viewStart" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ctrl_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/BottomActionBarItemMargin"
+                android:contentDescription="@string/dummy_content"
+                app:srcCompat="@drawable/ic_location" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/BottomActionBar">
+
+        <TextView
+            android:id="@+id/action_done"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_done"
+            android:text="@string/label_action_done" />
+
+        <TextView
+            android:id="@+id/action_cancel"
+            style="@style/BottomActionBarItem.Action"
+            android:drawableTop="@drawable/ic_action_cancel"
+            android:text="@string/label_action_cancel" />
+    </LinearLayout>
+</LinearLayout>

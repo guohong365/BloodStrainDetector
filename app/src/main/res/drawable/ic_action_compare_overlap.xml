@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:drawable="@drawable/ic_action_background" />
+            <item android:gravity="center">
+                <bitmap android:src="@drawable/ic_action_compare_overlap_pressed"/>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_enabled="false">
+         <bitmap android:gravity="center"  android:src="@drawable/ic_action_compare_overlap_pressed"/>
+    </item>
+    <item >
+        <bitmap android:src="@drawable/ic_action_compare_overlap_normal" />
+    </item>
+</selector>

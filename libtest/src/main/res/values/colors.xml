@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="case_level_0">#006aff</color>
+    <color name="case_level_1">#FF00FFFF</color>
+    <color name="case_level_2">#FF00FF6A</color>
+    <color name="case_level_3">#FFFF6A00</color>
+    <color name="case_level_4">#FFFF0000</color>
+    <color name="case_level_0_pressed">#FF0035C0</color>
+    <color name="case_level_1_pressed">#FF00C0C0</color>
+    <color name="case_level_2_pressed">#FF00C035</color>
+    <color name="case_level_3_pressed">#FFC03500</color>
+    <color name="case_level_4_pressed">#FFC00000</color>
+    <color name="color_image_overlay">#66ffffff</color>
+</resources>

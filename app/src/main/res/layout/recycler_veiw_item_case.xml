@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/i_preview"
+        android:layout_width="@dimen/preview_size"
+        android:layout_height="@dimen/preview_size"
+        android:contentDescription="@string/dummy_content"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_default_image"
+        android:layout_margin="@dimen/margin_case_preview" />
+
+    <TextView
+        android:id="@+id/t_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ctrl_separator"
+        android:layout_toEndOf="@+id/i_preview"
+        android:layout_toStartOf="@+id/i_level"
+        android:text="@string/dummy_content"
+        android:textAlignment="viewStart"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/t_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/t_name"
+        android:layout_below="@+id/t_name"
+        android:layout_margin="@dimen/ctrl_separator"
+        android:layout_toStartOf="@+id/i_level"
+        android:text="@string/dummy_content"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/i_level"
+        android:layout_width="@dimen/ctrl_case_level_size"
+        android:layout_height="@dimen/ctrl_case_level_size"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/BottomActionBarItemMargin"
+        android:layout_marginStart="@dimen/BottomActionBarItemMargin"
+        android:layout_toStartOf="@+id/i_view_detail_arrow"
+        android:contentDescription="@string/dummy_content"
+        app:srcCompat="@drawable/ic_case_level_0_normal" />
+
+    <ImageView
+        android:id="@+id/i_view_detail_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/BottomActionBarItemMargin"
+        android:layout_marginStart="@dimen/BottomActionBarItemMargin"
+        android:contentDescription="@string/dummy_content"
+        app:srcCompat="@drawable/ic_arrow_more" />
+</RelativeLayout>

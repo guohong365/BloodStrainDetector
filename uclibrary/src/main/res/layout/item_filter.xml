@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_frame"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blueviolet">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/sizeColorFilterIcon"
+            android:layout_height="@dimen/sizeColorFilterIcon"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_filter_background_selected"  />
+</FrameLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.uc.widget.AspectRatioLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/marginOptionControls"
+    android:layout_marginTop="@dimen/marginOptionControls"
+    app:labels="@array/labels_aspect_ratio"
+    app:ratios="@array/values_aspect_ratio"
+    app:ratioBase="@integer/aspect_ratio_base">
+</com.uc.widget.AspectRatioLayout>
