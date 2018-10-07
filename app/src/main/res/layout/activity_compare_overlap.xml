@@ -15,6 +15,7 @@
         android:id="@+id/compare_root_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/tool_bar"
         android:layout_above="@+id/compare_item_options">
 
     </com.uc.bloodstraindetector.view.CompareFrameLayout>

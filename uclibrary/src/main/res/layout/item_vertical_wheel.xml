@@ -20,5 +20,5 @@
         app:tickLineWidth="@dimen/widthProgressWheelTickLine"
         app:tickLineLength="@dimen/lengthProgressWheelTickLine"
         app:tickLineSpace="@dimen/spaceProgressWheelTickLine"
-        app:orientation="vertical" />
+        app:direction="vertical" />
 </merge>

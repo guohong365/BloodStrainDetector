@@ -21,7 +21,7 @@
         <attr name="tickLineColor" format="color" />
         <attr name="middleTickLineColor" format="color" />
         <attr name="totalValue" format="float" />
-        <attr name="orientation">
+        <attr name="direction">
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
         </attr>

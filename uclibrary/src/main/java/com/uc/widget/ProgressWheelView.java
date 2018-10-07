@@ -117,7 +117,7 @@ public class ProgressWheelView extends View implements StyledAttributesView {
         lineWidth =array.getDimensionPixelSize(R.styleable.ProgressWheelView_tickLineWidth, getContext().getResources().getDimensionPixelSize(R.dimen.widthProgressWheelTickLine));
         lineLength =array.getDimensionPixelSize(R.styleable.ProgressWheelView_tickLineLength, getContext().getResources().getDimensionPixelSize(R.dimen.lengthProgressWheelTickLine));
         totalScrollDistance=array.getFloat(R.styleable.ProgressWheelView_totalValue, 0);
-        orientation=array.getInt(R.styleable.ProgressWheelView_orientation, ORIENTATION_HORIZONTAL);
+        orientation=array.getInt(R.styleable.ProgressWheelView_direction, ORIENTATION_HORIZONTAL);
         array.recycle();
         linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         linePaint.setStyle(Paint.Style.STROKE);

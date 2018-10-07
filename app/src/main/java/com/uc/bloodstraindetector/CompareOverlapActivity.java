@@ -84,11 +84,6 @@ public class CompareOverlapActivity extends CompareActivityBase {
     }
 
     @Override
-    protected void onSaveImage() {
-
-    }
-
-    @Override
     protected void onSwapImage() {
         compareFrameLayout.swapImage(CompareFrameLayout.SWAP_UP_TO_DOWN);
     }

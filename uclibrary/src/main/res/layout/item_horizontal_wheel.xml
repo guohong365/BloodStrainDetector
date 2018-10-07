@@ -32,7 +32,7 @@
             android:layout_margin="@dimen/spaceProgressWheelTickLine"
             android:layout_weight="1"
             app:middleTickLineColor="@color/colorProgressWheelMiddleTickLine"
-            app:orientation="horizontal"
+            app:direction="horizontal"
             app:tickLineColor="@color/colorProgressWheelTickLine"
             app:tickLineLength="@dimen/lengthProgressWheelTickLine"
             app:tickLineSpace="@dimen/spaceProgressWheelTickLine"

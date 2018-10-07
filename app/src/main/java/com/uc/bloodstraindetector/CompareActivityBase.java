@@ -1,6 +1,7 @@
 package com.uc.bloodstraindetector;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uc.activity.ActivityBase;
 import com.uc.activity.CameraActivity;
@@ -33,7 +35,11 @@ import com.uc.bloodstraindetector.model.RequestParamsImpl;
 import com.uc.bloodstraindetector.utils.FileHelper;
 import com.uc.bloodstraindetector.view.CompareFrameLayout;
 
+import com.uc.task.BitmapSaveTask;
+import com.uc.utils.ViewUtils;
 import com.yalantis.ucrop.view.TransformImageView;
+
+import java.io.File;
 
 public abstract class CompareActivityBase extends ActivityBase {
     protected static final int REQUEST_TAKE_PHOTO =0;
@@ -177,8 +183,22 @@ public abstract class CompareActivityBase extends ActivityBase {
         return true;
     }
     protected void onSaveImage(){
-        //TODO: save image
-        showToast("save images......");
+        blockingView.setClickable(true);
+        Bitmap bitmap=ViewUtils.capture(compareFrameLayout);
+        Uri file=FileHelper.getImageUri(getApplicationContext(), CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
+        new BitmapSaveTask(this, bitmap, file, null, new BitmapSaveTask.BitmapSaveCallback() {
+            @Override
+            public void onBitmapSaved(Uri outputUri) {
+                CompareActivityBase.this.showToast("image saved.");
+                blockingView.setClickable(false);
+            }
+
+            @Override
+            public void onSaveFailure(Throwable throwable) {
+                CompareActivityBase.this.showToast("image saved failed." + throwable.getMessage());
+                blockingView.setClickable(false);
+            }
+        }).execute();
     }
     protected abstract void onSwapImage();
     @Override

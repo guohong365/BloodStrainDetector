@@ -135,15 +135,10 @@ public class ImageEditView  extends GestureCropImageView {
         return mode;
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-    }
-
     public void applyTunePreview(){
         tuneModifier.applyForPreview((FastBitmapDrawable)getDrawable());
         invalidate();
-    }
+     }
     public void commitTune(){
         tuneModifier.applyTo((FastBitmapDrawable) getDrawable());
         setDirty(true);

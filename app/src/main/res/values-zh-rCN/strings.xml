@@ -46,6 +46,8 @@
     <string name="label_action_swap_up_down">互换</string>
     <string name="label_action_add">新增</string>
     <string name="message_choose_and_replace_for_compare">选择图片替换当前比对照片。</string>
+    <string name="message_save_image_ok">图像保存成功。</string>
+    <string name="message_save_image_failed">图像保存失败。</string>
     <string name="label_action_delete">删除</string>
     <string name="label_action_batch_delete">批量删除</string>
     <string name="label_action_edit">编辑</string>

@@ -27,6 +27,7 @@ import com.uc.android.camera.app.CameraApp;
 import com.uc.images.ColorMatrixFilter;
 import com.uc.images.EditMode;
 import com.uc.images.callback.OnOptionChangeListener;
+import com.uc.task.BitmapSaveTask;
 import com.uc.utils.FileHelper;
 import com.uc.widget.EditModeSelectionLayout;
 import com.uc.widget.ImageEditView;
@@ -323,11 +324,12 @@ public class PhotoEditorActivity extends ActivityBase
             }
         });
     }
-
+    Uri inputUri;
+    Uri outputUri;
     private void setupImageData() {
         Intent intent = getIntent();
-        Uri inputUri = intent.getParcelableExtra(EXTRA_INPUT);
-        Uri outputUri = intent.getParcelableExtra(EXTRA_OUTPUT);
+        inputUri = intent.getParcelableExtra(EXTRA_INPUT);
+        outputUri = intent.getParcelableExtra(EXTRA_OUTPUT);
         if (outputUri == null) {
             File file = FileHelper.getTempFile(this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
             outputUri = Uri.fromFile(file);
@@ -364,8 +366,20 @@ public class PhotoEditorActivity extends ActivityBase
     }
 
     private void saveImage() {
-        //TODO: save image
-        showToast("to save image......");
+        blockingView.setClickable(true);
+        new BitmapSaveTask(this, imageEditView.getViewBitmap(), outputUri, null, new BitmapSaveTask.BitmapSaveCallback() {
+            @Override
+            public void onBitmapSaved(Uri outputUri) {
+                blockingView.setClickable(false);
+                PhotoEditorActivity.this.showToast("保存成功。");
+            }
+
+            @Override
+            public void onSaveFailure(Throwable throwable) {
+                blockingView.setClickable(false);
+                PhotoEditorActivity.this.showToast("保存失败。");
+            }
+        }).execute();
     }
 
     private void applyCrop() {

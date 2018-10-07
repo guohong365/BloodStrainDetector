@@ -1,11 +1,10 @@
 apply plugin: 'com.android.library'
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
-
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion 24
+        targetSdkVersion 28
         versionCode 22
         versionName "2.2.0-native"
 
@@ -24,16 +23,15 @@ android {
     lintOptions {
         abortOnError false
     }
-
     resourcePrefix 'ucrop_'
-
     sourceSets.main {
         jni.srcDirs = []
     }
-
+    productFlavors {
+    }
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:$ANDROID_SUPPORT_VERSION"
-    implementation "com.squareup.okhttp3:okhttp:$OK_HTTP_VERSION"
+    implementation "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
+    implementation "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
 }
