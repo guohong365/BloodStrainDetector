@@ -41,6 +41,5 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:${ANDROID_SUPPORT_VERSION}"
     implementation "com.android.support:gridlayout-v7:${ANDROID_SUPPORT_VERSION}"
     implementation "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
-    implementation project(':uclibrary')
     implementation project(':ucrop')
 }
