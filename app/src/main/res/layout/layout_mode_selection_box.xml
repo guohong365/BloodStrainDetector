@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.uc.widget.ActionItemView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/layout_action_geometry"
+        app:icon="@drawable/ic_action_crop"
+        app:label="@string/label_action_geometry"/>
+    <com.uc.widget.ActionItemView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/layout_action_filter"
+        app:icon="@drawable/ic_action_filter"
+        app:label="@string/label_action_filter" />
+    <com.uc.widget.ActionItemView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/layout_action_tune"
+        app:icon="@drawable/ic_action_tune"
+        app:label="@string/label_action_tune" />
+
+    <com.uc.widget.ActionItemView
+        android:id="@+id/layout_action_mark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:icon="@drawable/ic_action_mark"
+        app:label="@string/label_action_mark" />
+</merge>

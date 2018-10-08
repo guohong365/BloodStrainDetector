@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- progress wheel widget options -->
+    <color name="colorProgressWheelTickLine">#8F808080</color>
+    <color name="colorProgressWheelMiddleTickLine">#8FFF0000</color>
+
+    <dimen name="widthProgressWheelTickLine">2dp</dimen>
+    <dimen name="lengthProgressWheelTickLine">20dp</dimen>
+    <dimen name="spaceProgressWheelTickLine">10dp</dimen>
+
+</resources>

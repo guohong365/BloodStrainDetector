@@ -40,7 +40,7 @@
         <activity android:name=".CaseEditorActivity" />
         <activity android:name=".CaseContentActivity" />
         <activity android:name=".PhotoSelectActivity" />
-        <activity android:name="com.uc.activity.PhotoEditorActivity" />
+        <activity android:name=".PhotoEditorActivity" />
         <activity android:name="com.uc.activity.PermissionsActivity" />
         <activity android:name="com.uc.android.camera.settings.CameraSettingsActivity"/>
         <activity android:name="com.uc.activity.CameraActivity" android:screenOrientation="portrait" />
