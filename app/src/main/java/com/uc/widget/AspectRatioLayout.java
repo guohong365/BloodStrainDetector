@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.images.callback.OnOptionChangeListener;
 import com.uc.images.callback.OptionChangedNotifier;
 import com.uc.model.AspectRatio;

@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.model.DataGroup;
 import com.uc.model.ItemFinder;
 import com.uc.model.Selectable;

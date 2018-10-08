@@ -18,8 +18,7 @@ package com.uc.android.camera.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.android.camera.app.AppController;
 import com.uc.android.camera.app.ModuleManagerImpl;
 import android.util.Log;

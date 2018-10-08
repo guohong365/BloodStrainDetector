@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.images.ColorMatrixFilter;
 import com.uc.images.callback.OnOptionChangeListener;
 import com.uc.images.callback.OptionChangedNotifier;
@@ -38,7 +38,7 @@ public class FilterOptionsLayout extends LinearLayout implements OptionChangedNo
     }
 
     private void buildFilters(){
-        TypedArray icons=getResources().obtainTypedArray(com.uc.R.array.filter_colors);
+        TypedArray icons=getResources().obtainTypedArray(R.array.filter_colors);
         Log.d(TAG, "buildFilters: icon count=" + icons.length());
         ColorMatrixFilter[] filters=new ColorMatrixFilter[]{
                 new ColorMatrixFilter.GreyScaleFilter(),
@@ -48,11 +48,11 @@ public class FilterOptionsLayout extends LinearLayout implements OptionChangedNo
                 new ColorMatrixFilter.NegativeFilter()
         };
         int[] colorDrawables=new int[]{
-                com.uc.R.drawable.ic_filter_gray,
-                com.uc.R.drawable.ic_filter_red,
-                com.uc.R.drawable.ic_filter_green,
-                com.uc.R.drawable.ic_filter_blue,
-                com.uc.R.drawable.ic_filter_negative
+                R.drawable.ic_filter_gray,
+                R.drawable.ic_filter_red,
+                R.drawable.ic_filter_green,
+                R.drawable.ic_filter_blue,
+                R.drawable.ic_filter_negative
 
         };
         Log.d(TAG, "buildFilters: filter count=" + filters.length);

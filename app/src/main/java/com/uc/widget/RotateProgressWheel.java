@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.yalantis.ucrop.util.SelectedStateListDrawable;
 
 public class RotateProgressWheel extends WrapperProgressWheel {

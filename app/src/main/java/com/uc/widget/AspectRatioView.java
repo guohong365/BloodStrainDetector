@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.model.AspectRatio;
 import com.yalantis.ucrop.view.CropImageView;
 

@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.model.ColorItem;
 
 public class ColorItemView extends FrameLayout {

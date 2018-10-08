@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.images.callback.OnOptionChangeListener;
 import com.uc.images.callback.OptionChangedNotifier;
 import com.yalantis.ucrop.util.SelectedStateListDrawable;

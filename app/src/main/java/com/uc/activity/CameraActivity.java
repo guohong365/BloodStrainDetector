@@ -62,7 +62,6 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.MemoryCategory;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.executor.FifoPriorityThreadPoolExecutor;
-import com.uc.R;
 import com.uc.android.camera.ButtonManager;
 import com.uc.android.camera.CameraModule;
 import com.uc.android.camera.FatalErrorHandler;
@@ -115,6 +114,7 @@ import com.uc.android.ex.camera2.portability.CameraSettings;
 import com.uc.android.util.eventprotos;
 import com.uc.android.util.eventprotos.ForegroundEvent.ForegroundSource;
 import com.uc.android.util.eventprotos.NavigationChange;
+import com.uc.bloodstraindetector.R;
 import com.uc.utils.ActivityHelper;
 
 import java.lang.ref.WeakReference;

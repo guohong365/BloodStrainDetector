@@ -1,24 +1,16 @@
 package com.uc.bloodstraindetector;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uc.activity.ActivityBase;
-import com.uc.activity.PhotoEditorActivity;
 import com.uc.bloodstraindetector.model.CaseItem;
 import com.uc.bloodstraindetector.model.DataManager;
 import com.uc.bloodstraindetector.model.ImageItem;

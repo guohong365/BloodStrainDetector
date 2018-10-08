@@ -2,4 +2,7 @@
 <resources>
     <integer name="image_grid_horizontal_span">6</integer>
     <integer name="image_grid_vertival_span">4</integer>
+
+    <integer name="bottom_bar_background_alpha_overlay">153</integer>
+    <integer name="bottom_bar_background_alpha">255</integer>
 </resources>

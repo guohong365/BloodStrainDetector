@@ -26,12 +26,13 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
-import com.uc.R;
+
 import com.uc.android.camera.CaptureLayoutHelper;
 import com.uc.android.camera.ui.motion.InterpolatorHelper;
 import com.uc.android.camera.widget.ModeOptions;
 import com.uc.android.camera.widget.ModeOptionsOverlay;
 import com.uc.android.camera.widget.RoundedThumbnailView;
+import com.uc.bloodstraindetector.R;
 
 
 /**

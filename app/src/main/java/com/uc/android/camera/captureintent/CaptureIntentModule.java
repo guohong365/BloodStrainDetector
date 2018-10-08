@@ -24,7 +24,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.uc.R;
+
 import com.uc.activity.CameraActivity;
 import com.uc.android.camera.CameraModule;
 import com.uc.android.camera.app.AppController;
@@ -57,6 +57,7 @@ import com.uc.android.camera.ui.PreviewStatusListener;
 import com.uc.android.camera.ui.TouchCoordinate;
 import com.uc.android.camera.util.Size;
 import com.uc.android.ex.camera2.portability.CameraAgent;
+import com.uc.bloodstraindetector.R;
 
 /**
  * The camera module that handles image capture intent.

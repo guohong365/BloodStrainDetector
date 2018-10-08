@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.uc.activity.ActivityBase;
 import com.uc.activity.CameraActivity;
-import com.uc.activity.PhotoEditorActivity;
 import com.uc.activity.RequestParams;
 import com.uc.android.camera.app.CameraApp;
 import com.uc.bloodstraindetector.model.CaseItem;
@@ -275,8 +274,10 @@ public class CaseContentActivity extends ActivityBase {
     private  void startEditPhoto(ImageItem imageItem){
         Intent intent=new Intent();
         intent.setClass(this, PhotoEditorActivity.class);
-        intent.putExtra(PhotoEditorActivity.EXTRA_OUTPUT, imageItem.getUri());
         intent.putExtra(PhotoEditorActivity.EXTRA_INPUT, imageItem.getUri());
+        File file=FileHelper.getImageFile(this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
+        intent.putExtra(PhotoEditorActivity.EXTRA_OUTPUT, Uri.fromFile(file));
+        intent.putExtra(PhotoEditorActivity.EXTRA_CASE_ID, caseItem.getId());
         startActivityForResult(intent, REQUEST_PHOTO_EDIT);
     }
 
@@ -326,7 +327,11 @@ public class CaseContentActivity extends ActivityBase {
                 doSaveImageItem();
                 break;
             case REQUEST_PHOTO_EDIT:
-                doSaveImageItem();
+                Uri uri=data.getParcelableExtra(PhotoEditorActivity.EXTRA_OUTPUT);
+                if(uri!=null){
+                    ImageItem imageItem= ImageItemUtils.New(caseItem.getId(), uri);
+                    groupAdapter.insertSubItem(imageItem, 0);
+                }
                 break;
             case REQUEST_PAGER_VIEW:
                 //TODO : update list if delete or edit in pager

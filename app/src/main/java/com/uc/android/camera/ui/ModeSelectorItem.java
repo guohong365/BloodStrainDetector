@@ -25,7 +25,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.android.camera.util.ApiHelper;
 
 /**

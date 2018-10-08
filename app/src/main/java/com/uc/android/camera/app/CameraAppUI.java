@@ -32,7 +32,6 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
-import com.uc.R;
 import com.uc.android.camera.AnimationManager;
 import com.uc.android.camera.ButtonManager;
 import com.uc.android.camera.CaptureLayoutHelper;
@@ -61,6 +60,7 @@ import com.uc.android.camera.widget.Cling;
 import com.uc.android.camera.widget.IndicatorIconController;
 import com.uc.android.camera.widget.ModeOptionsOverlay;
 import com.uc.android.camera.widget.RoundedThumbnailView;
+import com.uc.bloodstraindetector.R;
 
 
 /**

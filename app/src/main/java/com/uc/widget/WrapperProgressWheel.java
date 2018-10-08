@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 
 public class WrapperProgressWheel extends LinearLayout {
 

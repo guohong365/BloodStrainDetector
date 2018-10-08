@@ -1,1 +1,1 @@
-include ':app', ':uclibrary', ':libtest', ':sample', ':ucrop'
+include ':app', ':sample', ':ucrop'

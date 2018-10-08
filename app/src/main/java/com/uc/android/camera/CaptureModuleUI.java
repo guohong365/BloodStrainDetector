@@ -23,7 +23,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.uc.R;
+
 import com.uc.activity.CameraActivity;
 import com.uc.android.camera.ui.CountDownView;
 import com.uc.android.camera.ui.PreviewOverlay;
@@ -31,6 +31,7 @@ import com.uc.android.camera.ui.PreviewOverlay.OnZoomChangedListener;
 import com.uc.android.camera.ui.PreviewStatusListener;
 import com.uc.android.camera.ui.ProgressOverlay;
 import com.uc.android.camera.ui.focus.FocusRing;
+import com.uc.bloodstraindetector.R;
 
 /**
  * Contains the UI for the CaptureModule.

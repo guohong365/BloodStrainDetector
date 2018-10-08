@@ -27,8 +27,7 @@ import android.opengl.EGLSurface;
 import android.opengl.GLES20;
 import android.util.Log;
 
-
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 import com.uc.android.camera.util.Size;
 import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.GenericRequestBuilder;

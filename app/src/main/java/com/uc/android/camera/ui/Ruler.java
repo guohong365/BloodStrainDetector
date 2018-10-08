@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.uc.R;
+import com.uc.bloodstraindetector.R;
 
 public class Ruler extends View
     implements PreviewStatusListener.PreviewAreaChangedListener{
