@@ -59,9 +59,6 @@ public class PhotoEditorActivity extends ActivityBase
     private static final float MAX_CONTRACT= 2;
     private static final float MAX_SATURATION=2;
 
-    private Uri source;
-    private Uri target;
-
     public PhotoEditorActivity() {
     }
 
@@ -111,7 +108,8 @@ public class PhotoEditorActivity extends ActivityBase
     private View optionsFrame;
     private View blockingView;
     private boolean showLoader = true;
-
+    private Uri inputUri;
+    private Uri outputUri;
 
     protected void setResultError(Throwable throwable) {
         setResult(RESULT_CANCELED, new Intent().putExtra(EXTRA_PROCESS_ERROR, throwable));
@@ -324,8 +322,7 @@ public class PhotoEditorActivity extends ActivityBase
             }
         });
     }
-    Uri inputUri;
-    Uri outputUri;
+
     private void setupImageData() {
         Intent intent = getIntent();
         inputUri = intent.getParcelableExtra(EXTRA_INPUT);
