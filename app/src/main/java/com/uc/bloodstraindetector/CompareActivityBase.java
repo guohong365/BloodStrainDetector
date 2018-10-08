@@ -31,6 +31,8 @@ import com.uc.android.camera.app.CameraApp;
 import com.uc.bloodstraindetector.model.CaseItem;
 import com.uc.bloodstraindetector.model.CompareParams;
 import com.uc.bloodstraindetector.model.DataManager;
+import com.uc.bloodstraindetector.model.ImageItem;
+import com.uc.bloodstraindetector.model.ImageItemUtils;
 import com.uc.bloodstraindetector.model.RequestParamsImpl;
 import com.uc.bloodstraindetector.utils.FileHelper;
 import com.uc.bloodstraindetector.view.CompareFrameLayout;
@@ -40,6 +42,8 @@ import com.uc.utils.ViewUtils;
 import com.yalantis.ucrop.view.TransformImageView;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class CompareActivityBase extends ActivityBase {
     protected static final int REQUEST_TAKE_PHOTO =0;
@@ -115,17 +119,18 @@ public abstract class CompareActivityBase extends ActivityBase {
         setupLayout();
         setupViews();
         setupCommandBars();
-        loadImageData();
+        compareParams = getIntent().getParcelableExtra(RequestParams.KEY_REQUEST);
     }
 
     @Override
     protected void onResumeTasks() {
         super.onResumeTasks();
         hideNavigationBarAndStatusBar();
+        Log.d(TAG, "onResumeTasks: ............");
+        loadImageData();
     }
 
     protected void loadImageData(){
-        compareParams = getIntent().getParcelableExtra(RequestParams.KEY_REQUEST);
         loadCount=2;
         compareFrameLayout.setCompareParams(compareParams);
     }
@@ -135,7 +140,9 @@ public abstract class CompareActivityBase extends ActivityBase {
         Intent intent=new Intent();
         intent.setClass(this,CameraActivity.class);
         Log.d(TAG, "startTakePhoto...... ");
-        takenPhotoUri=FileHelper.getImageUri(this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
+        File file=FileHelper.getImageFile(this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
+        takenPhotoUri=Uri.fromFile(file);
+        Log.d(TAG, "startTakePhoto: takenPhotoUri=" + takenPhotoUri.toString());
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, takenPhotoUri);
         startActivityForResult(intent, REQUEST_TAKE_PHOTO);
@@ -155,15 +162,16 @@ public abstract class CompareActivityBase extends ActivityBase {
         startActivityForResult(intent, REQUEST_CHOOSE_PHOTO);
     }
     protected void afterPhotoRequested(int requestPhotoIndex, Uri photoUri){
-        loadCount=1;
-        blockingView.setClickable(true);
-        compareFrameLayout.setImageUri(requestPhotoIndex, photoUri);
+        compareParams.images[requestPhotoIndex]=photoUri.toString();
+        Log.d(TAG, "afterPhotoRequested: ...........");
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(resultCode!=RESULT_OK) return;
         switch (requestCode) {
             case REQUEST_TAKE_PHOTO:
+                ImageItem imageItem= ImageItemUtils.New(compareParams.caseId, takenPhotoUri);
+                DataManager.getInstance().insertImageItem(imageItem);
                 break;
             case REQUEST_CHOOSE_PHOTO:
                 RequestParamsImpl params=data.getParcelableExtra(RequestParams.KEY_REQUEST);

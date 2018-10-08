@@ -365,9 +365,9 @@ public class PhotoEditorActivity extends ActivityBase
         }
     }
 
-    private void saveImage() {
+    private void saveImage(Uri uri) {
         blockingView.setClickable(true);
-        new BitmapSaveTask(this, imageEditView.getViewBitmap(), outputUri, null, new BitmapSaveTask.BitmapSaveCallback() {
+        new BitmapSaveTask(this, imageEditView.getViewBitmap(), uri, null, new BitmapSaveTask.BitmapSaveCallback() {
             @Override
             public void onBitmapSaved(Uri outputUri) {
                 blockingView.setClickable(false);
@@ -468,7 +468,9 @@ public class PhotoEditorActivity extends ActivityBase
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         } else if (item.getItemId() == R.id.option_menu_save) {
-            saveImage();
+            saveImage(inputUri);
+        } else if(item.getItemId()==R.id.option_menu_save_as){
+            saveImage(outputUri);
         }
         return super.onOptionsItemSelected(item);
     }

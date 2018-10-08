@@ -16,6 +16,7 @@ public class RequestParamsImpl implements RequestParams {
     private String message;
     private Integer requestCount;
     private List<ImageItem> imageItems;
+    private List<String> excludes;
     public RequestParamsImpl(int action){
         this(action, -1, null);
     }
@@ -28,18 +29,19 @@ public class RequestParamsImpl implements RequestParams {
     }
     public RequestParamsImpl(int action, int position, CaseItem caseItem, String message,
                              Integer requestCount){
-        this(action, position, caseItem, message, requestCount, new ArrayList<ImageItem>());
+        this(action, position, caseItem, message, requestCount, new ArrayList<ImageItem>(), new ArrayList<>());
 
     }
     public RequestParamsImpl(int action, int position, CaseItem caseItem, String message,
                              Integer requestCount,
-                             @NonNull List<ImageItem> imageItems) {
+                             @NonNull List<ImageItem> imageItems,@NonNull List<String> excludes) {
         this.action = action;
         this.position = position;
         this.caseItem = caseItem;
         this.message = message;
         this.requestCount = requestCount;
         this.imageItems=imageItems;
+        this.excludes=excludes;
     }
 
     @Override
@@ -111,6 +113,14 @@ public class RequestParamsImpl implements RequestParams {
         this.imageItems = imageItems;
     }
 
+    public void setExcludes(List<String> excludes) {
+        this.excludes = excludes;
+    }
+
+    public List<String> getExcludes() {
+        return excludes;
+    }
+
     public  List<ImageItem> getSelectedItems(){
         List<ImageItem> selectedItems=new ArrayList<>();
         for(ImageItem item : imageItems){
@@ -118,7 +128,6 @@ public class RequestParamsImpl implements RequestParams {
         }
         return selectedItems;
     }
-
 
     @Override
     public int describeContents() {
@@ -133,6 +142,7 @@ public class RequestParamsImpl implements RequestParams {
         dest.writeString(this.message);
         dest.writeValue(this.requestCount);
         dest.writeTypedList(this.imageItems);
+        dest.writeList(this.excludes);
     }
 
     protected RequestParamsImpl(Parcel in) {
@@ -142,6 +152,8 @@ public class RequestParamsImpl implements RequestParams {
         this.message = in.readString();
         this.requestCount = (Integer) in.readValue(Integer.class.getClassLoader());
         this.imageItems = in.createTypedArrayList(ImageItem.CREATOR);
+        this.excludes = new ArrayList<String>();
+        in.readList(this.excludes, Long.class.getClassLoader());
     }
 
     public static final Creator<RequestParamsImpl> CREATOR = new Creator<RequestParamsImpl>() {
