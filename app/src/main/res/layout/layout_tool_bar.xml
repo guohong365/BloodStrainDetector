@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        style="@style/ToolBar"
+        android:theme="@style/ThemeToolBarBlack"
+        app:popupTheme="@style/ThemeToolBarBlackPopupMenu">
+        <TextView
+            style="@style/ToolBarTitle"
+            android:id="@+id/title_tool_bar"
+            android:text="dummy_content"/>
+    </android.support.v7.widget.Toolbar>
+</merge>

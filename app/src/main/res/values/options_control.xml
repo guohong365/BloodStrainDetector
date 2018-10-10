@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sizeOptionIcon">20dp</dimen>
+    <dimen name="sizeOptionItem">32dp</dimen>
+    <dimen name="paddingOptionItem">2dp</dimen>
+    <dimen name="sizeOptionLabelSelectedIndicator">8dp</dimen>
+
+    <dimen name="marginOptionControls">10dp</dimen>
+    <dimen name="widthDefaultCropFrameStock">1dp</dimen>
+    <dimen name="widthDefaultCropGridStck">1dp</dimen>
+
+
+    <color name="colorDefaultImageEditDimmed">#8C000000</color>
+    <color name="colorDefaultCropFrame">#FFFFFFFF</color>
+    <color name="colorDefaultCropGrid">#80ffffff</color>
+
+    <color name="colorDefaultActiveOptionItem">#FF0099FF</color>
+    <color name="colorDefaultOptionLabel">#FFFFFFFF</color>
+    <color name="colorDefaultBackgroundOptionItem">#8C000000</color>
+    <color name="colorDefaultActiveActionItem">#FF0099FF</color>
+    <color name="colorBackgroundOverlay">#00000000</color>
+
+    <dimen name="sizeTextOptionColorFilter">8sp</dimen>
+    <dimen name="sizeColorFilterIcon">48dp</dimen>
+
+    <array name="filter_colors">
+        <item>@drawable/ic_filter_gray</item>
+        <item>@drawable/ic_filter_red</item>
+        <item>@drawable/ic_filter_green</item>
+        <item>@drawable/ic_filter_blue</item>
+        <item>@drawable/ic_filter_negative</item>
+    </array>
+
+    <string-array name="filter_labels">
+        <item>@string/label_filter_gray</item>
+        <item>@string/label_filter_red</item>
+        <item>@string/label_filter_green</item>
+        <item>@string/label_filter_blue</item>
+        <item>@string/label_filter_negative</item>
+    </string-array>
+
+    <integer-array name="mark_colors">
+        <item>@android:color/black</item>
+        <item>@android:color/white</item>
+        <item>@android:color/holo_red_dark</item>
+        <item>@android:color/holo_blue_dark</item>
+        <item>@android:color/holo_green_dark</item>
+        <item>@android:color/holo_orange_light</item>
+        <item>@android:color/holo_purple</item>
+    </integer-array>
+    <array name="mark_color_drawables">
+        <item>@drawable/ic_color_white</item>
+        <item>@drawable/ic_color_black</item>
+        <item>@drawable/ic_color_red</item>
+        <item>@drawable/ic_color_blue</item>
+        <item>@drawable/ic_color_green</item>
+        <item>@drawable/ic_color_orange</item>
+        <item>@drawable/ic_color_purple</item>
+    </array>
+</resources>
