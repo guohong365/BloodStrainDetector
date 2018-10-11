@@ -92,6 +92,9 @@ public class CaseListActivity extends ActivityBase {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                break;
             case R.id.option_menu_add_case:
                 startCaseEditor(-1,null, REQUEST_CREATE_NEW_CASE);
                 break;

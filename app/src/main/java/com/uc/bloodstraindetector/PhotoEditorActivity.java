@@ -367,9 +367,7 @@ public class PhotoEditorActivity extends ActivityBase
         }
     }
 
-    private void onImageSavedAs(Uri uri){
-        DataManager.getInstance().insertImageItem(ImageItemUtils.New(caseId, uri));
-    }
+
     private void saveImage(Uri uri) {
         blockingView.setClickable(true);
         new BitmapSaveTask(this, imageEditView.getViewBitmap(), uri, null, new BitmapSaveTask.BitmapSaveCallback() {
@@ -377,9 +375,15 @@ public class PhotoEditorActivity extends ActivityBase
             public void onBitmapSaved(Uri outputUri) {
                 blockingView.setClickable(false);
                 PhotoEditorActivity.this.showToast("保存成功。");
-                onImageSavedAs(outputUri);
-                File file=FileHelper.getImageFile(PhotoEditorActivity.this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
-                PhotoEditorActivity.this.outputUri= Uri.fromFile(file);
+                if(!outputUri.equals(PhotoEditorActivity.this.inputUri)) {
+                    Intent intent = new Intent();
+                    intent.putExtra(EXTRA_OUTPUT, outputUri);
+                    PhotoEditorActivity.this.setResult(RESULT_OK, intent);
+                    PhotoEditorActivity.this.finish();
+                } else {
+                    PhotoEditorActivity.this.setResult(RESULT_OK);
+                    PhotoEditorActivity.this.finish();
+                }
             }
 
             @Override
@@ -478,6 +482,10 @@ public class PhotoEditorActivity extends ActivityBase
         } else if (item.getItemId() == R.id.option_menu_save) {
             saveImage(inputUri);
         } else if(item.getItemId()==R.id.option_menu_save_as){
+            if(outputUri==null){
+                File file=FileHelper.getImageFile(this, CameraApp.getImageFileName(FileHelper.IMAGE_EXT));
+                outputUri=Uri.fromFile(file);
+            }
             saveImage(outputUri);
         }
         return super.onOptionsItemSelected(item);

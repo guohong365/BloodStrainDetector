@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.uc.activity.ActivityBase;
 import com.uc.activity.CameraActivity;
 import com.uc.activity.RequestParams;
@@ -32,6 +33,7 @@ import com.uc.bloodstraindetector.model.ImageItem;
 import com.uc.bloodstraindetector.model.ImageItemUtils;
 import com.uc.bloodstraindetector.model.RequestParamsImpl;
 import com.uc.bloodstraindetector.utils.FileHelper;
+import com.uc.bloodstraindetector.utils.GlideUtils;
 import com.uc.bloodstraindetector.view.OnAfterPhotosChosenListener;
 import com.uc.bloodstraindetector.view.adapter.ImageGroupListAdapter;
 import com.uc.bloodstraindetector.view.adapter.holder.ImageGroupItemHolderFactory;
@@ -327,10 +329,13 @@ public class CaseContentActivity extends ActivityBase {
                 doSaveImageItem();
                 break;
             case REQUEST_PHOTO_EDIT:
+                GlideUtils.clearMemoryCache(this);
                 Uri uri=data.getParcelableExtra(PhotoEditorActivity.EXTRA_OUTPUT);
                 if(uri!=null){
                     ImageItem imageItem= ImageItemUtils.New(caseItem.getId(), uri);
                     groupAdapter.insertSubItem(imageItem, 0);
+                } else {
+                    groupAdapter.notifyItemUpdated(caseItem);
                 }
                 break;
             case REQUEST_PAGER_VIEW:

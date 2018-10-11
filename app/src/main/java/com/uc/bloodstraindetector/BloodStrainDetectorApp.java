@@ -5,10 +5,13 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
 import com.uc.android.camera.app.CameraApp;
+import com.uc.android.camera.util.AndroidContext;
 import com.uc.bloodstraindetector.model.CaseItemDao;
 import com.uc.bloodstraindetector.model.DaoMaster;
 import com.uc.bloodstraindetector.model.DaoSession;
+import com.uc.bloodstraindetector.utils.GlideUtils;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -39,7 +42,7 @@ public class BloodStrainDetectorApp extends CameraApp {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        GlideUtils.clearAll(this);
         instance=this;
         setupDao();
     }

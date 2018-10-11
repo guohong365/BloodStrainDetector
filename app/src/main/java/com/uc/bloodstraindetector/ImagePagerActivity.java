@@ -2,6 +2,7 @@ package com.uc.bloodstraindetector;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -14,6 +15,7 @@ import com.uc.activity.ActivityBase;
 import com.uc.bloodstraindetector.model.CaseItem;
 import com.uc.bloodstraindetector.model.DataManager;
 import com.uc.bloodstraindetector.model.ImageItem;
+import com.uc.bloodstraindetector.model.ImageItemUtils;
 import com.uc.bloodstraindetector.view.adapter.ImagePagerAdapter;
 
 import java.util.List;
@@ -134,4 +136,22 @@ public class ImagePagerActivity extends ActivityBase {
         }
         viewPager.getAdapter().notifyDataSetChanged();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode != RESULT_OK) return;
+        switch (requestCode) {
+            case REQUEST_EDIT_PHOTO:
+                Uri uri=data.getParcelableExtra(PhotoEditorActivity.EXTRA_OUTPUT);
+                if(uri!=null) {
+                    DataManager.getInstance().insertImageItem(ImageItemUtils.New(caseItem.getId(), uri));
+                }
+                adapter.notifyDataSetChanged();
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+
 }
