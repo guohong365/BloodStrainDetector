@@ -226,7 +226,10 @@ public class CaseContentActivity extends ActivityBase {
             @Override
             public void onClicked(View groupView, View view, DataGroup group, int groupPosition, Object tag, int position) {
                 ImageItem item= (ImageItem) tag;
-                startImagePager(request.getCaseItem().getId(), position);
+                Log.d(TAG, "onClicked: group=" + group.getGroupName() + " position=" + position + "item=" + item.getUri());
+                int index=caseItem.getImages().indexOf(item);
+                Log.d(TAG, "onClicked: indexOf=" + index);
+                startImagePager(request.getCaseItem().getId(), index >=0 ? index : 0);
             }
         });
         groupAdapter.setOnRecyclerViewGroupedItemLongClickListener(new OnRecyclerViewGroupedItemLongClickListener() {
@@ -340,6 +343,7 @@ public class CaseContentActivity extends ActivityBase {
                 break;
             case REQUEST_PAGER_VIEW:
                 //TODO : update list if delete or edit in pager
+                groupAdapter.notifyDataSetChanged();
                 break;
         }
     }

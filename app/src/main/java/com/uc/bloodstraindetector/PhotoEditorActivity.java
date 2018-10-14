@@ -375,15 +375,10 @@ public class PhotoEditorActivity extends ActivityBase
             public void onBitmapSaved(Uri outputUri) {
                 blockingView.setClickable(false);
                 PhotoEditorActivity.this.showToast("保存成功。");
-                if(!outputUri.equals(PhotoEditorActivity.this.inputUri)) {
-                    Intent intent = new Intent();
-                    intent.putExtra(EXTRA_OUTPUT, outputUri);
-                    PhotoEditorActivity.this.setResult(RESULT_OK, intent);
-                    PhotoEditorActivity.this.finish();
-                } else {
-                    PhotoEditorActivity.this.setResult(RESULT_OK);
-                    PhotoEditorActivity.this.finish();
-                }
+                Intent intent = new Intent();
+                intent.putExtra(EXTRA_OUTPUT, outputUri);
+                PhotoEditorActivity.this.setResult(RESULT_OK, intent);
+                PhotoEditorActivity.this.finish();
             }
 
             @Override
@@ -470,7 +465,7 @@ public class PhotoEditorActivity extends ActivityBase
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.option_menu_save).setVisible(!showLoader);
+        menu.findItem(R.id.option_menu_save_as).setVisible(!showLoader);
         menu.findItem(R.id.option_menu_loader).setVisible(showLoader);
         return super.onPrepareOptionsMenu(menu);
     }

@@ -15,9 +15,12 @@ import com.uc.activity.ActivityBase;
 import com.uc.bloodstraindetector.model.CaseItem;
 import com.uc.bloodstraindetector.model.DataManager;
 import com.uc.bloodstraindetector.model.ImageItem;
+import com.uc.bloodstraindetector.model.ImageItemState;
 import com.uc.bloodstraindetector.model.ImageItemUtils;
 import com.uc.bloodstraindetector.view.adapter.ImagePagerAdapter;
+import com.uc.model.DataUpdatedState;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,15 +30,18 @@ import java.util.List;
 public class ImagePagerActivity extends ActivityBase {
     public static final String KEY_CASE_ID="caseId";
     public static final String KEY_POSITION="position";
+    public static final String KEY_MODIFIED="modified";
     public static final String KEY_VIEW_ONLY="view_only";
     private static final int REQUEST_EDIT_PHOTO = 0;
     private CaseItem caseItem;
     private List<ImageItem> imageItems;
+    private ArrayList<ImageItemState> modifiedImages;
     private ViewPager viewPager;
     private ImagePagerAdapter adapter;
     private int current;
     @Override
     protected void onCreateTasks(Bundle savedInstanceState) {
+        modifiedImages=new ArrayList<>();
         long caseId=getIntent().getLongExtra(KEY_CASE_ID, -1);
         if(caseId!=-1) {
             caseItem = DataManager.getInstance().findCaseById(caseId);
@@ -66,12 +72,14 @@ public class ImagePagerActivity extends ActivityBase {
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
         outState.putInt(KEY_POSITION, viewPager.getCurrentItem());
+        outState.putParcelableArrayList(KEY_MODIFIED, modifiedImages);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         current=savedInstanceState.getInt(KEY_POSITION);
+        modifiedImages = savedInstanceState.getParcelableArrayList(KEY_MODIFIED);
     }
 
     @Override
@@ -126,12 +134,20 @@ public class ImagePagerActivity extends ActivityBase {
         startActivityForResult(intent, REQUEST_EDIT_PHOTO);
     }
 
+    private void setActivityResult(){
+        Intent intent=new Intent();
+        intent.putParcelableArrayListExtra(KEY_MODIFIED, modifiedImages);
+        setResult(RESULT_OK, intent);
+    }
+
     private void doDeleteImage() {
         int position = viewPager.getCurrentItem();
         Log.d(TAG, "deleteItem: delete at " + position);
         ImageItem imageItem = imageItems.get(position);
         DataManager.getInstance().deleteImageItem(imageItem);
+        modifiedImages.add(new ImageItemState(imageItem, DataUpdatedState.Deleted));
         if(imageItems.size()==0) {
+            setResult(RESULT_OK);
             finish();
         }
         viewPager.getAdapter().notifyDataSetChanged();
@@ -143,8 +159,13 @@ public class ImagePagerActivity extends ActivityBase {
         switch (requestCode) {
             case REQUEST_EDIT_PHOTO:
                 Uri uri=data.getParcelableExtra(PhotoEditorActivity.EXTRA_OUTPUT);
-                if(uri!=null) {
-                    DataManager.getInstance().insertImageItem(ImageItemUtils.New(caseItem.getId(), uri));
+                if(!uri.equals(getCurrentItem().getUri())) {
+                    ImageItem imageItem=ImageItemUtils.New(caseItem.getId(), uri);
+                    modifiedImages.add(new ImageItemState(imageItem, DataUpdatedState.Created));
+                    DataManager.getInstance().insertImageItem(imageItem);
+                } else {
+                    ImageItem imageItem=getCurrentItem();
+                    modifiedImages.add(new ImageItemState(imageItem, DataUpdatedState.Modified));
                 }
                 adapter.notifyDataSetChanged();
                 break;
@@ -153,5 +174,9 @@ public class ImagePagerActivity extends ActivityBase {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        setActivityResult();
+        finish();
+    }
 }
